@@ -1,0 +1,53 @@
+<idea-plugin>
+    <id>com.github.ethank.jetbrainsdeploymentplugin</id>
+    <name>deployment</name>
+    <vendor>ethan-k</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <description><![CDATA[
+    This plugin allows you to send messages to a Slack channel directly from IntelliJ IDEA,
+    including deployment notifications for staging and production environments.
+    ]]></description>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.github.ethank.jetbrainsdeploymentplugin.ui.toolwindow.DeploymentPluginToolWindowFactory"
+                    id="Deployment"
+                    secondary="true"
+                    icon="/icons/logo.svg"
+                    anchor="right"/>
+        <projectConfigurable instance="com.github.ethank.jetbrainsdeploymentplugin.ui.projectsettings.DeploymentPluginConfigurable"
+                             displayName="Deployment Plugin Settings"/>
+        <statusBarWidgetFactory
+                implementation="com.github.ethank.jetbrainsdeploymentplugin.ui.statuswidget.DeploymentStatusWidgetWidgetFactory"
+                id="DeploymentStatus"
+        />
+    </extensions>
+    <actions>
+        <group id="com.github.ethank.jetbrainsdeploymentplugin.actions.SelectCommitDeployment"
+               class="com.github.ethank.jetbrainsdeploymentplugin.actions.SelectCommitDeployment"
+               text="Slack Deployment"
+               popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
+
+        <action id="com.github.ethank.jetbrainsdeploymentplugin.actions.SlackPluginAction"
+                class="com.github.ethank.jetbrainsdeploymentplugin.actions.DeployCurrentBranchToStaging"
+                text="Deploy Current Branch to Staging"
+                description="Send a message to a Slack channel to deploy the current branch to staging"
+                popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="com.github.ethank.jetbrainsdeploymentplugin.actions.DeployCurrentBranchToProduction"
+                class="com.github.ethank.jetbrainsdeploymentplugin.actions.DeployCurrentBranchToProduction"
+                text="Deploy Current Branch to Production"
+                description="Send a message to a Slack channel to deploy the current branch to production"
+                popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
