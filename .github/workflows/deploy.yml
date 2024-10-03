@@ -1,0 +1,65 @@
+name: Deploy
+
+on:
+  deployment:
+  workflow_dispatch:
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    if: github.event.deployment.environment == 'staging'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging
+        if: github.event.deployment.environment == 'staging'
+        run: |
+          echo "Deploying to Staging"
+
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "success"
+          deployment-id: ${{ github.event.deployment.id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "failure"
+          deployment-id: ${{ github.event.deployment.id }}
+
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment: production
+    if: github.event.deployment.environment == 'production'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production
+        if: github.event.deployment.environment == 'production'
+        run: |
+          echo "Deploying to Production"
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "success"
+          deployment-id: ${{ github.event.deployment.id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "failure"
+          deployment-id: ${{ github.event.deployment.id }}
