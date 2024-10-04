@@ -1,51 +1,69 @@
-# jetbrains-slack-plugin
+# JetBrains Deployment Plugin
 
-![Build](https://github.com/ethan-k/jetbrains-slack-plugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+## Purpose
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+This plugin enhances the deployment workflow in JetBrains IDEs by integrating Slack notifications and GitHub deployment
+status tracking. It's designed to streamline the deployment process and improve team communication.
+
+## Features
+
+- **Slack Integration**: Send deployment notifications directly to a specified Slack channel.
+- **GitHub Deployment Status**: Track the status of your deployments directly in the IDE's status bar.
+- **Flexible Deployment Options**:
+    - Deploy the current branch to staging or production environments.
+    - Select specific commits for deployment.
+- **Confirmation Dialogs**: Prevent accidental deployments with confirmation prompts.
+- **Configurable Settings**: Easily configure Slack tokens, channel names, and other settings via a dedicated tool
+  window.
+
+## Plugin Description
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+The JetBrains Deployment Plugin enhances your development workflow by integrating deployment processes directly into
+your IDE. Key features include:
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+- Slack notifications for deployment events
+- Real-time GitHub deployment status tracking
+- One-click deployment of current branch or specific commits
+- Configurable settings for Slack integration and deployment options
+- Safety features like confirmation dialogs for critical actions
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+This plugin is perfect for teams looking to streamline their deployment process and improve communication around code
+releases.
 <!-- Plugin description end -->
 
 ## Installation
 
-- Using the IDE built-in plugin system:
-  
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "jetbrains-slack-plugin"</kbd> >
-  <kbd>Install</kbd>
-  
-- Using JetBrains Marketplace:
-
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
-
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
+- **Manual Installation**:
+  Download the [latest release](https://github.com/ethan-k/jetbrains-slack-plugin/releases/latest) and install it
+  manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-- Manually:
+## Usage
 
-  Download the [latest release](https://github.com/ethan-k/jetbrains-slack-plugin/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+1. **Configuration**:
 
+- Open the Slack Plugin tool window or go to <kbd>Settings/Preferences</kbd> > <kbd>Tools</kbd> > <kbd>Slack Plugin
+  Settings</kbd>
+- Enter your Slack API token and channel name
+- Set the number of commits to display in the deployment menu
 
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+2. **Deploying**:
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+- Right-click in the Project view or Editor
+- Navigate to the "Slack Deployment" menu
+- Choose to deploy the current branch or a specific commit to staging or production
+
+3. **Monitoring**:
+
+- Check the status bar for real-time updates on your deployment status
+
+## Development
+
+This plugin is open for contributions. If you'd like to contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
