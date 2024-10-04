@@ -1,17 +1,17 @@
-package com.github.ethank.jetbrainsslackplugin.actions
+package com.github.ethank.jetbrainsdeploymentplugin.actions
 
-import com.github.ethank.jetbrainsslackplugin.common.git.getRecentCommits
-import com.github.ethank.jetbrainsslackplugin.common.git.model.CommitInfo
-import com.github.ethank.jetbrainsslackplugin.common.slack.createDeployMessage
-import com.github.ethank.jetbrainsslackplugin.common.slack.sendToSlack
-import com.github.ethank.jetbrainsslackplugin.services.SettingsService
+import com.github.ethank.jetbrainsdeploymentplugin.common.git.getRecentCommits
+import com.github.ethank.jetbrainsdeploymentplugin.common.git.model.CommitInfo
+import com.github.ethank.jetbrainsdeploymentplugin.common.slack.createDeployMessage
+import com.github.ethank.jetbrainsdeploymentplugin.common.slack.sendToSlack
+import com.github.ethank.jetbrainsdeploymentplugin.services.SettingsService
 import com.intellij.openapi.actionSystem.ActionGroup
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 
-class SelectCommitDeployment() : ActionGroup("Deployment", true) {
+class SelectCommitDeployment : ActionGroup("Deployment", true) {
 
     override fun getChildren(e: AnActionEvent?): Array<AnAction> {
         val actions = mutableListOf<AnAction>()

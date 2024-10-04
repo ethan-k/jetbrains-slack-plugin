@@ -1,7 +1,7 @@
-package com.github.ethank.jetbrainsslackplugin.common.slack
+package com.github.ethank.jetbrainsdeploymentplugin.common.slack
 
-import com.github.ethank.jetbrainsslackplugin.common.git.model.CommitInfo
-import com.github.ethank.jetbrainsslackplugin.common.git.getBranch
+import com.github.ethank.jetbrainsdeploymentplugin.common.git.model.CommitInfo
+import com.github.ethank.jetbrainsdeploymentplugin.common.git.getBranch
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages

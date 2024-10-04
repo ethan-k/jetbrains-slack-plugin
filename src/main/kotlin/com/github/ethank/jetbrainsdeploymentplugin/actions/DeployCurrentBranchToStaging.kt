@@ -1,7 +1,7 @@
-package com.github.ethank.jetbrainsslackplugin.actions
+package com.github.ethank.jetbrainsdeploymentplugin.actions
 
-import com.github.ethank.jetbrainsslackplugin.common.slack.createDeployMessage
-import com.github.ethank.jetbrainsslackplugin.common.slack.sendToSlack
+import com.github.ethank.jetbrainsdeploymentplugin.common.slack.createDeployMessage
+import com.github.ethank.jetbrainsdeploymentplugin.common.slack.sendToSlack
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 

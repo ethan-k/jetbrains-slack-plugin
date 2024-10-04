@@ -1,6 +1,4 @@
-// File: src/main/kotlin/com/github/ethank/jetbrainsslackplugin/toolWindow/DeploymentPluginToolWindowFactory.kt
-
-package com.github.ethank.jetbrainsslackplugin.ui
+package com.github.ethank.jetbrainsdeploymentplugin.ui
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.project.Project
@@ -45,7 +43,6 @@ class SlackPluginToolWindowContent(private val project: Project) {
         c.gridwidth = 2
         panel.add(saveButton, c)
 
-        // Add a vertical glue to push everything to the top
         c.weighty = 1.0
         c.gridy = 4
         panel.add(Box.createVerticalGlue(), c)
@@ -55,7 +52,13 @@ class SlackPluginToolWindowContent(private val project: Project) {
         return panel
     }
 
-    private fun addLabelAndField(panel: JPanel, c: GridBagConstraints, labelText: String, field: JTextField, gridy: Int) {
+    private fun addLabelAndField(
+        panel: JPanel,
+        c: GridBagConstraints,
+        labelText: String,
+        field: JTextField,
+        gridy: Int
+    ) {
         c.gridy = gridy
         c.gridx = 0
         c.gridwidth = 1
