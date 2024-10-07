@@ -5,7 +5,7 @@ junit5 = "5.8.2"
 kotlinTestJunit5 = "1.9.25"
 coroutinesTest = "1.6.4"
 mockk = "1.13.12"
-ktor = "2.3.0"
+ktor = "2.3.12"
 kotlinSerialization = "1.6.3"
 
 # plugins
