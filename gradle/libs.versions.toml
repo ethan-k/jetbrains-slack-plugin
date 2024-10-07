@@ -1,7 +1,7 @@
 [versions]
 slack = "1.43.1"
 jgit = "5.13.0.202109080827-r"
-junit5 = "5.8.2"
+junit5 = "5.11.2"
 kotlinTestJunit5 = "1.9.25"
 coroutinesTest = "1.6.4"
 mockk = "1.13.12"
