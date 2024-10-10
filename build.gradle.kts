@@ -40,7 +40,7 @@ dependencies {
 
     // logging
     implementation("ch.qos.logback:logback-classic:1.4.11")
-    implementation("org.slf4j:slf4j-api:2.0.9")
+    implementation("org.slf4j:slf4j-api:2.0.16")
 
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
