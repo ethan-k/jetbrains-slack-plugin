@@ -2,7 +2,7 @@
 slack = "1.43.1"
 jgit = "5.13.0.202109080827-r"
 junit5 = "5.8.2"
-kotlinTestJunit5 = "1.9.25"
+kotlinTestJunit5 = "2.0.20"
 coroutinesTest = "1.6.4"
 mockk = "1.13.12"
 ktor = "2.3.0"
